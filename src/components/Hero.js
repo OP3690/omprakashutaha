@@ -508,11 +508,12 @@ const Hero = () => {
           >
                 <ProfileImage>
                <img 
-                 src="/images/profile.jpg" 
+                 src="/images/profile-small.jpg" 
                  alt="Omprakash Utaha" 
                  onError={(e) => {
                    console.error('Failed to load profile image:', e.target.src);
-                   e.target.style.display = 'none';
+                   // Fallback to original image
+                   e.target.src = "/images/profile.jpg";
                  }}
                  onLoad={() => console.log('Profile image loaded successfully')}
                />

@@ -297,7 +297,7 @@ const Experience = () => {
       company: "Lendingkart",
       location: "Bangalore, India 🇮🇳",
       duration: "Aug'23 - Present",
-      logo: "/images/Lendingkart_logo.webp",
+      logo: "/images/Lendingkart_logo.png",
       companyUrl: "https://www.lendingkart.com/",
       description: "Product lead for the biggest charter in Lendingkart related to MSME lending responsible for building the platform [0–1] to onboard several banks and NBFCs.",
       responsibilities: [
@@ -318,7 +318,7 @@ const Experience = () => {
       company: "Credlix.com",
       location: "Noida",
       duration: "Sep'22 - Aug'23",
-      logo: "/images/Credlix.webp",
+      logo: "/images/Credlix.png",
       companyUrl: "https://www.credlix.com/",
       description: "Handling & Mentoring the team of 2 PMs and 13 Engineers to build a strong product culture to build a scalable and impact driven organization.",
       responsibilities: [
@@ -339,7 +339,7 @@ const Experience = () => {
       company: "Lendingkart.com",
       location: "Bangalore, India 🇮🇳",
       duration: "Nov'15 - Sep'22",
-      logo: "/images/Lendingkart_logo.webp",
+      logo: "/images/Lendingkart_logo.png",
       companyUrl: "https://www.lendingkart.com/",
       description: "Single Handedly managed interaction and coordination between different stakeholders across Six product lines.",
       responsibilities: [
