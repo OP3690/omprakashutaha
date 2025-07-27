@@ -175,42 +175,63 @@ const ToolsTitle = styled.h3`
 
 const ToolsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: ${props => props.theme.spacing.md};
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: ${props => props.theme.spacing.lg};
+  
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: ${props => props.theme.spacing.md};
+  }
 `;
 
 const ToolCard = styled(motion.div)`
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: ${props => props.theme.spacing.md};
-  padding: ${props => props.theme.spacing.md};
+  gap: ${props => props.theme.spacing.sm};
+  padding: ${props => props.theme.spacing.lg};
   background: ${props => props.theme.colors.background.secondary};
-  border-radius: ${props => props.theme.borderRadius.md};
+  border-radius: ${props => props.theme.borderRadius.lg};
   border: 1px solid ${props => props.theme.colors.border.primary};
   transition: all ${props => props.theme.transitions.normal};
+  text-align: center;
   
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: ${props => props.theme.shadows.md};
+    transform: translateY(-4px);
+    box-shadow: ${props => props.theme.shadows.lg};
+    border-color: ${props => props.theme.colors.primary[400]};
   }
 `;
 
 const ToolIcon = styled.div`
-  width: 40px;
-  height: 40px;
-  background: ${props => props.theme.colors.primary[100]};
+  width: 60px;
+  height: 60px;
+  background: white;
   border-radius: ${props => props.theme.borderRadius.md};
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${props => props.theme.colors.primary[600]};
-  font-size: ${props => props.theme.fonts.sizes.md};
-  font-weight: ${props => props.theme.fonts.weights.bold};
+  padding: ${props => props.theme.spacing.sm};
+  box-shadow: ${props => props.theme.shadows.sm};
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 `;
 
 const ToolName = styled.span`
-  font-weight: ${props => props.theme.fonts.weights.medium};
+  font-weight: ${props => props.theme.fonts.weights.semibold};
   color: ${props => props.theme.colors.text.primary};
+  font-size: ${props => props.theme.fonts.sizes.md};
+  margin-bottom: ${props => props.theme.spacing.xs};
+`;
+
+const ToolDescription = styled.span`
+  font-weight: ${props => props.theme.fonts.weights.normal};
+  color: ${props => props.theme.colors.text.secondary};
+  font-size: ${props => props.theme.fonts.sizes.sm};
 `;
 
 const Skills = () => {
@@ -268,16 +289,56 @@ const Skills = () => {
   ];
 
   const tools = [
-    { name: "JIRA", icon: "JI" },
-    { name: "Salesforce", icon: "SF" },
-    { name: "Mixpanel", icon: "MP" },
-    { name: "MySQL", icon: "MY" },
-    { name: "Redshift", icon: "RS" },
-    { name: "Confluence", icon: "CF" },
-    { name: "Balsamiq", icon: "BL" },
-    { name: "Draw.io", icon: "DR" },
-    { name: "VBA", icon: "VB" },
-    { name: "R Studio", icon: "RS" }
+    { 
+      name: "JIRA", 
+      logo: "https://cdn.worldvectorlogo.com/logos/jira-1.svg",
+      description: "Project Management"
+    },
+    { 
+      name: "Salesforce", 
+      logo: "https://cdn.worldvectorlogo.com/logos/salesforce-2.svg",
+      description: "CRM Platform"
+    },
+    { 
+      name: "Mixpanel", 
+      logo: "https://cdn.worldvectorlogo.com/logos/mixpanel-1.svg",
+      description: "Analytics"
+    },
+    { 
+      name: "MySQL", 
+      logo: "https://cdn.worldvectorlogo.com/logos/mysql-6.svg",
+      description: "Database"
+    },
+    { 
+      name: "Amazon Redshift", 
+      logo: "https://cdn.worldvectorlogo.com/logos/amazon-redshift.svg",
+      description: "Data Warehouse"
+    },
+    { 
+      name: "Confluence", 
+      logo: "https://cdn.worldvectorlogo.com/logos/confluence-1.svg",
+      description: "Documentation"
+    },
+    { 
+      name: "Balsamiq", 
+      logo: "https://cdn.worldvectorlogo.com/logos/balsamiq-1.svg",
+      description: "Wireframing"
+    },
+    { 
+      name: "Draw.io", 
+      logo: "https://cdn.worldvectorlogo.com/logos/drawio.svg",
+      description: "Diagramming"
+    },
+    { 
+      name: "VBA", 
+      logo: "https://cdn.worldvectorlogo.com/logos/microsoft-excel-2013.svg",
+      description: "Excel Automation"
+    },
+    { 
+      name: "R Studio", 
+      logo: "https://cdn.worldvectorlogo.com/logos/rstudio.svg",
+      description: "Data Science"
+    }
   ];
 
   return (
@@ -347,8 +408,18 @@ const Skills = () => {
                 transition={{ duration: 0.4, delay: 0.6 + index * 0.05 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <ToolIcon>{tool.icon}</ToolIcon>
+                <ToolIcon>
+                  <img 
+                    src={tool.logo} 
+                    alt={`${tool.name} logo`}
+                    onError={(e) => {
+                      console.error('Failed to load tool logo:', tool.name, e.target.src);
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                </ToolIcon>
                 <ToolName>{tool.name}</ToolName>
+                <ToolDescription>{tool.description}</ToolDescription>
               </ToolCard>
             ))}
           </ToolsGrid>
