@@ -312,9 +312,28 @@ export const GlobalStyles = createGlobalStyle`
       font-size: ${props => props.theme.fonts.sizes.sm};
     }
 
-    button {
-      font-size: ${props => props.theme.fonts.sizes.sm};
-      padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.md};
-    }
+      button {
+    font-size: ${props => props.theme.fonts.sizes.sm};
+    padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.md};
+  }
+
+  /* Remove default focus outlines and add custom ones */
+  button:focus,
+  a:focus,
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none;
+  }
+
+  /* Custom focus styles for better accessibility */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid ${props => props.theme.colors.primary[400]};
+    outline-offset: 2px;
+  }
   }
 `; 

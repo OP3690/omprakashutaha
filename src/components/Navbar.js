@@ -38,6 +38,13 @@ const Logo = styled(motion.div)`
   display: flex;
   align-items: center;
   gap: ${props => props.theme.spacing.sm};
+  padding: ${props => props.theme.spacing.sm};
+  border-radius: ${props => props.theme.borderRadius.md};
+  transition: all ${props => props.theme.transitions.normal};
+  
+  &:hover {
+    transform: scale(1.05);
+  }
   
   span {
     background: ${props => props.theme.gradients.primary};
@@ -80,14 +87,26 @@ const NavLink = styled(motion.a)`
   display: flex;
   align-items: center;
   gap: ${props => props.theme.spacing.xs};
+  outline: none;
+  border-radius: ${props => props.theme.borderRadius.md};
+  padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.md};
   
   &:hover {
     color: ${props => props.theme.isDarkMode ? '#60a5fa' : '#2563eb'};
     transform: translateY(-1px);
+    background: ${props => props.theme.colors.background.secondary};
+  }
+
+  &:focus {
+    outline: none;
+    color: ${props => props.theme.isDarkMode ? '#60a5fa' : '#2563eb'};
+    background: ${props => props.theme.colors.primary[50]};
+    box-shadow: 0 0 0 2px ${props => props.theme.colors.primary[200]};
   }
   
   &.active {
     color: ${props => props.theme.isDarkMode ? '#60a5fa' : '#2563eb'};
+    background: ${props => props.theme.colors.primary[50]};
     
     &::after {
       content: '';
@@ -114,11 +133,17 @@ const ThemeToggle = styled(motion.button)`
   justify-content: center;
   cursor: pointer;
   transition: all ${props => props.theme.transitions.normal};
+  outline: none;
   
   &:hover {
     background: ${props => props.theme.colors.primary[50]};
     color: ${props => props.theme.colors.primary[600]};
     transform: scale(1.05);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px ${props => props.theme.colors.primary[200]};
   }
 `;
 
@@ -129,9 +154,23 @@ const MobileMenuButton = styled(motion.button)`
   color: ${props => props.theme.colors.text.secondary};
   font-size: ${props => props.theme.fonts.sizes.xl};
   cursor: pointer;
+  outline: none;
+  padding: ${props => props.theme.spacing.sm};
+  border-radius: ${props => props.theme.borderRadius.md};
+  transition: all ${props => props.theme.transitions.normal};
   
   @media (max-width: ${props => props.theme.breakpoints.md}) {
     display: flex;
+  }
+
+  &:hover {
+    background: ${props => props.theme.colors.background.secondary};
+    color: ${props => props.theme.colors.primary[600]};
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px ${props => props.theme.colors.primary[200]};
   }
 `;
 
@@ -160,10 +199,18 @@ const MobileNavLink = styled(motion.a)`
   display: flex;
   align-items: center;
   gap: ${props => props.theme.spacing.md};
+  outline: none;
   
   &:hover {
     background: ${props => props.theme.colors.background.secondary};
     color: ${props => props.theme.colors.primary[600]};
+  }
+
+  &:focus {
+    outline: none;
+    background: ${props => props.theme.colors.primary[50]};
+    color: ${props => props.theme.colors.primary[600]};
+    box-shadow: 0 0 0 2px ${props => props.theme.colors.primary[200]};
   }
   
   &.active {
