@@ -281,6 +281,14 @@ export const GlobalStyles = createGlobalStyle`
     h2 {
       font-size: ${props => props.theme.fonts.sizes.xxl};
     }
+
+    h3 {
+      font-size: ${props => props.theme.fonts.sizes.xl};
+    }
+
+    p {
+      font-size: ${props => props.theme.fonts.sizes.base};
+    }
   }
 
   @media (max-width: ${props => props.theme.breakpoints.sm}) {
@@ -294,6 +302,19 @@ export const GlobalStyles = createGlobalStyle`
     
     h2 {
       font-size: ${props => props.theme.fonts.sizes.xl};
+    }
+
+    h3 {
+      font-size: ${props => props.theme.fonts.sizes.lg};
+    }
+
+    p {
+      font-size: ${props => props.theme.fonts.sizes.sm};
+    }
+
+    button {
+      font-size: ${props => props.theme.fonts.sizes.sm};
+      padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.md};
     }
   }
 `; 

@@ -85,6 +85,14 @@ const ContactCard = styled.div`
     transform: translateY(-4px);
     box-shadow: ${props => props.theme.shadows.xl};
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
+    padding: ${props => props.theme.spacing.xl};
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
+    padding: ${props => props.theme.spacing.lg};
+  }
 `;
 
 const ContactHeader = styled.div`
@@ -130,6 +138,14 @@ const ContactForm = styled(motion.form)`
   padding: ${props => props.theme.spacing.xxxl};
   border: 1px solid ${props => props.theme.colors.border.primary};
   box-shadow: ${props => props.theme.shadows.lg};
+
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
+    padding: ${props => props.theme.spacing.xl};
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
+    padding: ${props => props.theme.spacing.lg};
+  }
 `;
 
 const FormTitle = styled.h3`

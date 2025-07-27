@@ -138,14 +138,14 @@ const Stats = styled(motion.div)`
   gap: ${props => props.theme.spacing.lg};
   margin-bottom: ${props => props.theme.spacing.xl};
 
-  @media (max-width: ${props => props.theme.breakpoints.md}) {
-  grid-template-columns: repeat(2, 1fr);
+    @media (max-width: ${props => props.theme.breakpoints.md}) {
+    grid-template-columns: repeat(2, 1fr);
     gap: ${props => props.theme.spacing.md};
   }
 
   @media (max-width: ${props => props.theme.breakpoints.sm}) {
-    grid-template-columns: 1fr;
-    text-align: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: ${props => props.theme.spacing.sm};
   }
 `;
 
@@ -264,6 +264,16 @@ const ProfileCard = styled(motion.div)`
   max-width: 450px;
   width: 100%;
   margin: 0 auto;
+
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
+    max-width: 400px;
+    padding: ${props => props.theme.spacing.xl};
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
+    max-width: 350px;
+    padding: ${props => props.theme.spacing.lg};
+  }
 `;
 
          const ProfileImage = styled.div`
@@ -273,14 +283,24 @@ const ProfileCard = styled(motion.div)`
            background: ${props => props.theme.gradients.primary};
            margin: 0 auto ${props => props.theme.spacing.lg};
            display: flex;
-  align-items: center;
+           align-items: center;
            justify-content: center;
-  overflow: hidden;
+           overflow: hidden;
            box-shadow: ${props => props.theme.shadows.xl};
            
+           @media (max-width: ${props => props.theme.breakpoints.md}) {
+             width: 140px;
+             height: 140px;
+           }
+
+           @media (max-width: ${props => props.theme.breakpoints.sm}) {
+             width: 120px;
+             height: 120px;
+           }
+           
            img {
-    width: 100%;
-    height: 100%;
+             width: 100%;
+             height: 100%;
              object-fit: cover;
              border-radius: ${props => props.theme.borderRadius.full};
            }
@@ -311,6 +331,10 @@ const ProfileStats = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: ${props => props.theme.spacing.lg};
   margin-top: ${props => props.theme.spacing.lg};
+
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
+    gap: ${props => props.theme.spacing.md};
+  }
 `;
 
 const ProfileStat = styled.div`
@@ -489,14 +513,14 @@ const Hero = () => {
             </SocialLink>
             <SocialLink
               href="https://github.com/OP3690"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                >
               <FaGithub />
             </SocialLink>
-          </SocialLinks>
+              </SocialLinks>
         </HeroText>
 
         <HeroVisual>

@@ -182,6 +182,11 @@ const ToolsGrid = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: ${props => props.theme.spacing.md};
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: ${props => props.theme.spacing.sm};
+  }
 `;
 
 const ToolCard = styled(motion.div)`
@@ -201,6 +206,14 @@ const ToolCard = styled(motion.div)`
     box-shadow: ${props => props.theme.shadows.lg};
     border-color: ${props => props.theme.colors.primary[400]};
   }
+
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
+    padding: ${props => props.theme.spacing.md};
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
+    padding: ${props => props.theme.spacing.sm};
+  }
 `;
 
 const ToolIcon = styled.div`
@@ -213,6 +226,16 @@ const ToolIcon = styled.div`
   justify-content: center;
   padding: ${props => props.theme.spacing.sm};
   box-shadow: ${props => props.theme.shadows.sm};
+  
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
+    width: 50px;
+    height: 50px;
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
+    width: 40px;
+    height: 40px;
+  }
   
   img {
     width: 100%;
@@ -245,11 +268,11 @@ const Skills = () => {
       icon: FaRocket,
       title: "Product Management",
       skills: [
-        { name: "Product Strategy", level: 95 },
+            { name: "Product Strategy", level: 95 },
         { name: "Roadmap Planning", level: 90 },
         { name: "Stakeholder Management", level: 95 },
         { name: "User Experience", level: 85 },
-        { name: "Data Analytics", level: 90 },
+            { name: "Data Analytics", level: 90 },
         { name: "A/B Testing", level: 85 }
       ]
     },
@@ -358,27 +381,27 @@ const Skills = () => {
 
         <SkillsGrid>
           {skillCategories.map((category, index) => (
-            <SkillCategory
+          <SkillCategory
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -4 }}
-            >
-              <CategoryHeader>
-                <CategoryIcon>
+          >
+            <CategoryHeader>
+              <CategoryIcon>
                   <category.icon />
-                </CategoryIcon>
+              </CategoryIcon>
                 <CategoryTitle>{category.title}</CategoryTitle>
-              </CategoryHeader>
-              
+            </CategoryHeader>
+            
               <SkillsList>
                 {category.skills.map((skill, skillIndex) => (
                   <SkillItem key={skillIndex}>
-                    <SkillName>{skill.name}</SkillName>
+                  <SkillName>{skill.name}</SkillName>
                     <SkillLevel>
                       <SkillBar>
-                        <SkillProgress
+                  <SkillProgress
                           initial={{ width: 0 }}
                           animate={inView ? { width: `${skill.level}%` } : {}}
                           transition={{ duration: 1, delay: 0.5 + index * 0.1 + skillIndex * 0.05 }}
@@ -386,15 +409,15 @@ const Skills = () => {
                       </SkillBar>
                       <SkillPercentage>{skill.level}%</SkillPercentage>
                     </SkillLevel>
-                  </SkillItem>
-                ))}
+              </SkillItem>
+            ))}
               </SkillsList>
-            </SkillCategory>
+          </SkillCategory>
           ))}
         </SkillsGrid>
 
         <ToolsSection
-          initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
         >

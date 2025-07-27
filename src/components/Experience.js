@@ -121,6 +121,14 @@ const TimelineCard = styled.div`
     box-shadow: ${props => props.theme.shadows.xl};
   }
   
+  @media (max-width: ${props => props.theme.breakpoints.md}) {
+    padding: ${props => props.theme.spacing.lg};
+  }
+
+  @media (max-width: ${props => props.theme.breakpoints.sm}) {
+    padding: ${props => props.theme.spacing.md};
+  }
+  
   &::before {
     content: '';
     position: absolute;
