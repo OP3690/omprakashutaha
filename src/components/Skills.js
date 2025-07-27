@@ -119,8 +119,9 @@ const SkillItem = styled.div`
   transition: all ${props => props.theme.transitions.normal};
   
   &:hover {
-    background: ${props => props.theme.colors.primary[50]};
+    background: ${props => props.theme.colors.background.tertiary};
     border-color: ${props => props.theme.colors.primary[200]};
+    transform: translateY(-1px);
   }
 `;
 
