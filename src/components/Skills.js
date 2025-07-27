@@ -30,7 +30,7 @@ const SectionHeader = styled(motion.div)`
 const SectionTitle = styled.h2`
   font-size: ${props => props.theme.fonts.sizes.xxxl};
   font-weight: ${props => props.theme.fonts.weights.extrabold};
-  color: ${props => props.theme.isDarkMode ? '#ffffff' : '#0a0a0a'};
+  color: ${props => props.theme.colors.text.primary};
   margin-bottom: ${props => props.theme.spacing.lg};
   position: relative;
   
@@ -49,7 +49,7 @@ const SectionTitle = styled.h2`
 
 const SectionSubtitle = styled.p`
   font-size: ${props => props.theme.fonts.sizes.lg};
-  color: ${props => props.theme.isDarkMode ? '#cbd5e1' : '#2d3748'};
+  color: ${props => props.theme.colors.text.secondary};
   max-width: 700px;
   margin: 0 auto;
   line-height: ${props => props.theme.fonts.lineHeights.relaxed};
