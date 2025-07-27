@@ -409,7 +409,15 @@ const Experience = () => {
                     rel="noopener noreferrer"
                     title={`Visit ${experience.company} website`}
                   >
-                    <img src={experience.logo} alt={`${experience.company} logo`} />
+                    <img 
+                      src={experience.logo} 
+                      alt={`${experience.company} logo`}
+                      onError={(e) => {
+                        console.error('Failed to load company logo:', experience.company, e.target.src);
+                        e.target.style.display = 'none';
+                      }}
+                      onLoad={() => console.log(`${experience.company} logo loaded successfully`)}
+                    />
                     <div className="external-link-icon">
                       <FaExternalLinkAlt />
                     </div>

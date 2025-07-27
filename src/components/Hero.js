@@ -507,7 +507,15 @@ const Hero = () => {
             whileHover={{ y: -10 }}
           >
                 <ProfileImage>
-               <img src="/images/profile.jpg" alt="Omprakash Utaha" />
+               <img 
+                 src="/images/profile.jpg" 
+                 alt="Omprakash Utaha" 
+                 onError={(e) => {
+                   console.error('Failed to load profile image:', e.target.src);
+                   e.target.style.display = 'none';
+                 }}
+                 onLoad={() => console.log('Profile image loaded successfully')}
+               />
                 </ProfileImage>
             <ProfileInfo>
               <ProfileName>Omprakash Utaha</ProfileName>
