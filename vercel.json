@@ -19,6 +19,10 @@
       "dest": "/static/$1"
     },
     {
+      "src": "/CV_Omprakash_Utaha_2025.pdf",
+      "dest": "/CV_Omprakash_Utaha_2025.pdf"
+    },
+    {
       "src": "/favicon.ico",
       "dest": "/favicon.ico"
     },
