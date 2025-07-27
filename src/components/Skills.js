@@ -301,17 +301,17 @@ const Skills = () => {
     },
     { 
       name: "Mixpanel", 
-      logo: "https://cdn.worldvectorlogo.com/logos/mixpanel-1.svg",
+      logo: "/images/tools/png-clipart-mixpanel-icon-mixpanel-logo-icons-logos-emojis-tech-companies.png",
       description: "Analytics"
     },
     { 
       name: "MySQL", 
-      logo: "https://cdn.worldvectorlogo.com/logos/mysql-6.svg",
+      logo: "/images/tools/mysql-logo-png-image-11660514413jvwkcjh4av.png",
       description: "Database"
     },
     { 
       name: "Amazon Redshift", 
-      logo: "https://cdn.worldvectorlogo.com/logos/amazon-redshift.svg",
+      logo: "/images/tools/327-3272109_amazon-redshift-logo-amazon-redshift-logo-vector-clipart.png",
       description: "Data Warehouse"
     },
     { 
@@ -321,12 +321,12 @@ const Skills = () => {
     },
     { 
       name: "Balsamiq", 
-      logo: "https://cdn.worldvectorlogo.com/logos/balsamiq-1.svg",
+      logo: "/images/tools/Balsamiq.png",
       description: "Wireframing"
     },
     { 
       name: "Draw.io", 
-      logo: "https://cdn.worldvectorlogo.com/logos/drawio.svg",
+      logo: "/images/tools/draw-io.webp",
       description: "Diagramming"
     },
     { 
@@ -336,7 +336,7 @@ const Skills = () => {
     },
     { 
       name: "R Studio", 
-      logo: "https://cdn.worldvectorlogo.com/logos/rstudio.svg",
+      logo: "/images/tools/png-clipart-rstudio-data-analysis-logo-datacamp-inc-editorial-board-blue-angle.png",
       description: "Data Science"
     }
   ];
